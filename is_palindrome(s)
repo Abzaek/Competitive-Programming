@@ -1,0 +1,9 @@
+def is_palindrome(s):
+    checker = ""
+    for i in s.lower():
+        if i.isalnum() and i != " ":
+            checker += i
+    for i in range(len(checker)):
+        if checker[i] != checker[len(checker) - (i + 1)]:
+            return False
+    return True
