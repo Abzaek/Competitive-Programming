@@ -1,0 +1,24 @@
+class Solution:
+  def arrayChange(self, nums: List[int], operations: List[List[int]]) -> List[int]:
+    numToIndex = {num: i for i, num in enumerate(nums)}
+
+    for original, replaced in operations:
+      index = numToIndex[original]
+      nums[index] = replaced
+      del numToIndex[original]
+      numToIndex[replaced] = index
+
+    return nums
+
+# class Solution:
+#     def arrayChange(self, nums: List[int], operations: List[List[int]]) -> List[int]:
+#         hash_table = {}
+#         ans = []
+#         for i in range(len(operations)):
+#             hash_table[operations[i][0]] = operations[i][1]
+#         for j in hash_table.keys():
+#             for k, i in enumerate(nums):
+#                 if i == j:
+#                     nums[k] = hash_table[j]
+#         return nums
+             
