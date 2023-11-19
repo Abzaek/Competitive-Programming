@@ -8,9 +8,10 @@ def insertionSort1(n, arr):
         else:
             arr[n - i] = unSorteNum
             print(' '.join(map(str, arr)))
-            
-        
-        
+            break
+    if arr[0] > unSorteNum:
+        arr[0] = unSorteNum
+        print(' '.join(map(str, arr)))
 
 if __name__ == '__main__':
     n = int(input().strip())
