@@ -5,7 +5,6 @@ temp = list(map(int, input().split()))
 temp.sort()
 p = 0
 count = 0
-l = 0
 r = 0
 
 while r < n:
@@ -13,8 +12,6 @@ while r < n:
         count += 1
         p += temp[r]
     r += 1
-
-
 
 print(count)
 
