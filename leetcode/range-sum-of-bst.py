@@ -10,10 +10,11 @@ class Solution:
         def _sum(r):
             if not r:
                 return 0
-            
-            if r.val >= low and r.val <= high:
-                return r.val + _sum(r.right) + _sum(r.left)
+            if r.val < low:
+                return _sum(r.right)
+            elif r.val > high:
+                return _sum(r.left)
             else:
-                return _sum(r.right) + _sum(r.left)
-                
+                return r.val + _sum(r.right) + _sum(r.left)
+
         return _sum(root)
