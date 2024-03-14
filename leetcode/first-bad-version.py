@@ -2,15 +2,19 @@
 # def isBadVersion(version: int) -> bool:
 
 class Solution:
-  def firstBadVersion(self, n: int) -> int:
-    l = 1
-    r = n
+    def firstBadVersion(self, n: int) -> int:
+        high = n 
+        low = 1
+        curr = 0
 
-    while l < r:
-      m = (l + r) >> 1
-      if isBadVersion(m):
-        r = m
-      else:
-        l = m + 1
+        while high >= low:
+            mid = low + (high - low)//2
 
-    return l       
+            if isBadVersion(mid):
+                curr = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+        return curr
+
+        
