@@ -2,6 +2,7 @@ N = int(input())
 heights = list(map(int, input().split()))
 
 dp = {N-1:0,N-2:abs(heights[N-1]-heights[N-2])}
+
 if N==2:
     print(abs(heights[0] - heights[1]))
 else:
